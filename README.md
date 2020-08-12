@@ -1,2 +1,0 @@
-# HypersBOT
-BOT USING HEROKU, 24/7
