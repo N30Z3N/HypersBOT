@@ -1,42 +1,44 @@
 {
-  "name": "Minecraft",
-  "description": "A Minecraft Server on Heroku",
+  "name": "MCGG",
+  "description": "A Web-based minecraft server",
   "keywords": [
     "games",
     "minecraft"
   ],
+  "logo": "https://raw.githubusercontent.com/Ren232/mcgg/master/logo.jpg",
   "repository": "https://github.com/Prabu12345/HypersBOT",
   "env": {
     "MINECRAFT_EULA": {
       "description": "Do you accept the Minecraft EULA?",
-      "value": "true"
-    },
-    "NGROK_API_TOKEN": {
-      "description": "Your personal ngrok API token",
+      "value": "true",
       "required": true
     },
-    "AWS_BUCKET": {
-      "description": "S3 Bucket to store your server state (you will lose your games when the server restarts if you don't do this)",
+    "DROPBOX_API_TOKEN": {
+      "description": "Your personal dropbox API token  (Goto https://www.dropbox.com/developers/apps Click on create app, Select Dropbox API, Select App folder, Name the app & create it, Click on the app, Goto Generated access token, Click on Generate and Copy the key.) ",
+      "required": true
+    },
+    "DNSEXIT_DNS": {
+      "description": "Your personal DnsExit DNS hostname (Not required)",
       "required": false
     },
-    "AWS_ACCESS_KEY": {
-      "description": "The AWS access key for the S3 Bucket",
+    "DNSEXIT_USER": {
+      "description": "Your DnsExit Username (Not required)",
       "required": false
     },
-    "AWS_SECRET_KEY": {
-      "description": "The AWS secret key for the S3 Bucket",
+    "DNSEXIT_PASS": {
+      "description": "Your DnsExit User password (Not required)",
       "required": false
     }
   },
   "buildpacks": [
     {
-      "url": "heroku/python"
-    },
-    {
       "url": "heroku/jvm"
     },
     {
-      "url": "heroku-community/inline"
+      "url": "https://github.com/Prabu12345/HypersBOT"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
     }
   ]
 }
